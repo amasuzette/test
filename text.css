@@ -8,6 +8,20 @@ a{
     text-decoration: none;
     color: #333;
 }
+a:hover{
+    color: rgb(172, 170, 170);
+}
+a::after{
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: #333;
+    display: block;
+    transition: 0.3s linear;
+}
+a:hover::after{
+    width: 70%;
+}
 #main{
     background-color: #fff;
     position: sticky;
@@ -21,11 +35,13 @@ a{
     justify-content: flex-end;
     align-items: center;
     margin: auto;
+    flex-wrap: wrap;
 }
 .list{
     display: flex;
     gap: 2rem;
     list-style: none;
+    flex: 2 1 15rem;
 }
 .but{
     border: none;
@@ -43,6 +59,7 @@ a{
 .logo{
     margin-right: auto;
     font-size: 25px;
+    flex: 1 1 10rem;
 }
 /* main */
 #container{
@@ -57,10 +74,12 @@ a{
     justify-content: space-around;
     align-items: center;
     padding: 10px 5px;
+    flex-wrap: wrap;
 }
 .content{
     max-width: 550px;
     height: auto;
+    flex: 1 1 26rem;
     h2{
         font-size: 50px;
         font-family: sans-serif;
@@ -73,6 +92,11 @@ a{
         padding-top: 5px;
         padding-bottom: 10px;
     }
+}
+.image{
+    flex: 1 1 26rem;
+    display: flex;
+    justify-content: center;
 }
 .but2{
     border: none;
@@ -87,10 +111,10 @@ a{
     width: 100%;
     min-height: 70vh;
     background-color: #fff;
+    padding: 50px 0;
 }
 .head{
     text-align: center;
-    padding: 10px 0;
     h2{
         font-size: 35px;
         font-family: sans-serif;
@@ -106,9 +130,14 @@ a{
     justify-content: space-around;
     align-items: center;
     padding: 10px 5px;
-
+     flex-wrap: wrap;
+    i{
+        flex: 1 1 6rem;
+    }
 }
 .sech{
+    width: 65%;
+    margin: auto;
     text-align: center;
     padding: 10px 5px;
     h2{
@@ -117,12 +146,62 @@ a{
         padding: 10px 0;
     }
 }
-.card{
+.cards{
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
 }
 .box{
-    display: flex;
+    border: none;
+    box-shadow: 0 0 3px green;
+    width: 200px;
+    height: 150px;
+    padding: 20px;
+    margin: 20px;
+    flex: 1 1 8rem;
+    transition: 2s ease;
+    cursor: pointer;
+    
+    h2{
+        text-align: center;
+        color: rgb(31, 81, 31);
+        font-size: 35px;
+        padding: 0 10px;
+    }
+}
+.box:hover{
+    transform: scale(1.1);
+}
+.ic{
+    color: green;
+    font-size: 25px;
+    text-align: center;
+}
+.box1{
+    order: 3;
+}
+@media(max-width:900px){
+    .child{
+        width: 100%;
+        p
+    }
+    .content{
+        padding: 50px 0;
+        h2{
+            font-size: 60px;
+        }
+    }
+    .cards{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+    }
+    .box{
+        width: 350px;
+        height: 250px;
+        padding: 20px 30px;
+    }
 }
